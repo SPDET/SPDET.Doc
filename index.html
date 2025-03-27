@@ -10,8 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black; /* Fondo negro */
-            color: white; /* Color general de texto */
+            background-color: black;
+            color: white;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -21,23 +21,23 @@
             width: 90%;
             max-width: 800px;
             padding: 30px;
-            background: #333; /* Fondo gris oscuro */
+            background: #333;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: center;
         }
         h1 {
-            color: #FFA500; /* Título en color naranja */
+            color: #FFA500;
             margin-bottom: 20px;
         }
         .file-link {
-            display: flex;  /* Usamos flexbox para alinear el contenido */
-            align-items: center;  /* Centrar verticalmente los elementos */
-            justify-content: flex-end;  /* Alinear los enlaces a la derecha */
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
             margin: 10px 0;
             padding: 12px;
-            background-color: #333; /* Fondo gris oscuro */
-            color: white; /* Texto de los enlaces en blanco */
+            background-color: #333;
+            color: white;
             text-decoration: none;
             border-radius: 8px;
             transition: background-color 0.3s;
@@ -47,16 +47,16 @@
             background-color: #555;
         }
         .file-link img {
-            width: 20px; /* Ajustar el tamaño del ícono de la imagen */
+            width: 20px;
             height: 20px;
-            margin-right: 10px; /* Separación entre el ícono y el texto */
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>📂 Instructivos y Procedimientos</h1>
-        <div id="files-list"></div> <!-- Aquí se mostrarán los archivos PDF -->
+        <div id="files-list"></div>
     </div>
 
     <script>
@@ -70,12 +70,11 @@
                         const link = document.createElement('a');
                         link.href = file.name;
                         link.textContent = file.name;
-                        link.className = 'file-link'; /* Estilo del enlace */
-                        link.target = '_blank'; /* Abrir en nueva pestaña */
+                        link.className = 'file-link';
+                        link.target = '_blank';
 
-                        // Insertar el ícono de la imagen antes del texto del enlace
                         const icon = document.createElement('img');
-                        icon.src = 'https://raw.githubusercontent.com/SPDET/SPDET.Doc/main/AF826E78-9B9B-41AE-87F4-16E50FF0D6B9.png';  // URL de la imagen
+                        icon.src = 'image.png'; // Imagen subida por el usuario
 
                         link.prepend(icon);
                         filesListDiv.appendChild(link);
