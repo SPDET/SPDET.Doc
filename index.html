@@ -34,14 +34,16 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            margin: 10px 0;
-            padding: 12px;
+            margin: 5px 0;
+            padding: 8px;
             background-color: #333;
             color: white;
             text-decoration: none;
             border-radius: 8px;
             transition: background-color 0.3s;
             font-size: 14px;
+            text-align: justify;
+            line-height: 1.2;
         }
         .file-link:hover {
             background-color: #555;
@@ -75,7 +77,7 @@
                         link.target = '_blank';
 
                         const icon = document.createElement('img');
-                        icon.src = 'https://github.com/SPDET/SPDET.Doc/blob/main/istockphoto-1263032734-612x612.jpg?raw=true'; // Imagen subida por el usuario
+                        icon.src = 'https://github.com/SPDET/SPDET.Doc/blob/main/icon.png?raw=true';
 
                         link.prepend(icon);
                         filesListDiv.appendChild(link);
