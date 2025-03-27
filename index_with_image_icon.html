@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructivos y Procedimientos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black; /* Fondo negro */
+            color: white; /* Color general de texto */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 30px;
+            background: #333; /* Fondo gris oscuro */
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #FFA500; /* Título en color naranja */
+            margin-bottom: 20px;
+        }
+        .file-link {
+            display: flex;  /* Usamos flexbox para alinear el contenido */
+            align-items: center;  /* Centrar verticalmente los elementos */
+            justify-content: flex-end;  /* Alinear los enlaces a la derecha */
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #333; /* Fondo gris oscuro */
+            color: white; /* Texto de los enlaces en blanco */
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        }
+        .file-link:hover {
+            background-color: #555;
+        }
+        .file-link img {
+            width: 20px; /* Ajustar el tamaño del ícono de la imagen */
+            height: 20px;
+            margin-right: 10px; /* Separación entre el ícono y el texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📂 Instructivos y Procedimientos</h1>
+        <div id="files-list"></div> <!-- Aquí se mostrarán los archivos PDF -->
+    </div>
+
+    <script>
+        fetch('https://api.github.com/repos/SPDET/SPDET.Doc/contents')
+            .then(response => response.json())
+            .then(files => {
+                const filesListDiv = document.getElementById('files-list');
+
+                files.forEach(file => {
+                    if (file.name.endsWith('.pdf')) {
+                        const link = document.createElement('a');
+                        link.href = file.name;
+                        link.textContent = file.name;
+                        link.className = 'file-link'; /* Estilo del enlace */
+                        link.target = '_blank'; /* Abrir en nueva pestaña */
+
+                        // Insertar el ícono de la imagen antes del texto del enlace
+                        const icon = document.createElement('img');
+                        icon.src = 'https://raw.githubusercontent.com/SPDET/SPDET.Doc/main/AF826E78-9B9B-41AE-87F4-16E50FF0D6B9.png';  // URL de la imagen
+
+                        link.prepend(icon);
+                        filesListDiv.appendChild(link);
+                    }
+                });
+            })
+            .catch(error => console.error('Error cargando archivos:', error));
+    </script>
+</body>
+</html>
