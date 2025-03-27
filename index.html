@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio de Descarga de Archivos PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .file-link {
+            display: block;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .file-link:hover {
+            background-color: #0056b3;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📂 Archivos PDF Disponibles para Descarga</h1>
+        <div id="files-list"></div>
+    </div>
+
+    <script>
+        fetch('https://api.github.com/repos/SPDET/SPDET.Doc/contents')
+            .then(response => response.json())
+            .then(files => {
+                const filesListDiv = document.getElementById('files-list');
+
+                files.forEach(file => {
+                    if (file.name.endsWith('.pdf')) {
+                        const link = document.createElement('a');
+                        link.href = file.name;
+                        link.textContent = file.name;
+                        link.className = 'file-link';
+                        link.target = '_blank';
+                        filesListDiv.appendChild(link);
+                    }
+                });
+            })
+            .catch(error => console.error('Error cargando archivos:', error));
+    </script>
+</body>
+</html>
