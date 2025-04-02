@@ -2,167 +2,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructivos y Procedimientos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instructivos y Procedimientos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            padding: 30px;
-            background: #333;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      padding: 30px;
+      background: #333;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-        h1 {
-            color: #FFA500;
-            margin-bottom: 10px;
-        }
+    h1 {
+      color: #FFA500;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
 
-        .subtitulo {
-            color: red;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
+    .subtitulo {
+      color: red;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
 
-        .folder {
-            background-color: #222;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .folder {
+      background-color: #222;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
 
-        .folder:hover {
-            background-color: #444;
-        }
+    .folder:hover {
+      background-color: #444;
+    }
 
-        .file-link {
-            display: flex;
-            align-items: center;
-            margin: 5px 0;
-            padding: 8px;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s;
-            font-size: 14px;
-        }
+    .folder::before {
+      content: "📁";
+      margin-right: 8px;
+    }
 
-        .file-link:hover {
-            background-color: #555;
-        }
+    .file-link {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+      padding: 8px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+      font-size: 14px;
+    }
 
-        .file-link img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
+    .file-link:hover {
+      background-color: #555;
+    }
 
-        .back-button {
-            background: #FFA500;
-            color: black;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 6px;
-            margin-top: 20px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    .file-link img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
 
-        .error {
-            color: orange;
-            margin-top: 20px;
-        }
-    </style>
+    .back-button {
+      background: #FFA500;
+      color: black;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .error {
+      color: orange;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>📂 Reglamentos, Instructivos y Procedimientos</h1>
-        <p class="subtitulo">Superintendencia de Proyectos DET</p>
-        <div id="content"></div>
-    </div>
+  <div class="container">
+    <h1>📁 Reglamentos, Instructivos y Procedimientos</h1>
+    <p class="subtitulo">Superintendencia de Proyectos DET</p>
+    <div id="content"></div>
+  </div>
 
-    <script>
-        const contentDiv = document.getElementById('content');
-        const iconUrl = 'https://github.com/SPDET/SPDET.Doc/blob/main/icon.png?raw=true';
+  <script>
+    const contentDiv = document.getElementById('content');
+    const iconUrl = 'https://github.com/SPDET/SPDET.Doc/blob/main/icon.png?raw=true';
 
-        const folders = {
-            "Reglamentos": "Reglamentos",
-            "Procedimientos e Instructivos": "Procedimientos_e_Instructivos",
-            "Documentos Transversales": "Documentos_Transversales"
-        };
+    const folders = {
+      "Reglamentos": "Reglamentos",
+      "Procedimientos e Instructivos": "Procedimientos_e_Instructivos",
+      "Documentos Transversales": "Documentos_Transversales"
+    };
 
-        function showFolders() {
-            contentDiv.innerHTML = '';
-            for (const [label, path] of Object.entries(folders)) {
-                const div = document.createElement('div');
-                div.className = 'folder';
-                div.textContent = `📁 ${label}`;
-                div.onclick = () => loadFolder(path, label);
-                contentDiv.appendChild(div);
-            }
-        }
+    function showFolders() {
+      contentDiv.innerHTML = '';
+      for (const [label, path] of Object.entries(folders)) {
+        const div = document.createElement('div');
+        div.className = 'folder';
+        div.textContent = label;
+        div.onclick = () => loadFolder(path, label);
+        contentDiv.appendChild(div);
+      }
+    }
 
-        function loadFolder(folderPath, label) {
-            contentDiv.innerHTML = `<p>Cargando archivos de <strong>${label}</strong>...</p>`;
+    function loadFolder(folderPath, label) {
+      contentDiv.innerHTML = `<p>Cargando archivos de <strong>${label}</strong>...</p>`;
 
-            fetch(`https://api.github.com/repos/SPDET/SPDET.Doc/contents/${folderPath}`)
-                .then(response => response.json())
-                .then(files => {
-                    contentDiv.innerHTML = `<h2 style="color:#FFA500;">📂 ${label}</h2>`;
-                    const pdfFiles = files.filter(file => /\.pdf$/i.test(file.name));
+      fetch(`https://api.github.com/repos/SPDET/SPDET.Doc/contents/${folderPath}`)
+        .then(response => response.json())
+        .then(files => {
+          contentDiv.innerHTML = `<h2 style="color:#FFA500;">📂 ${label}</h2>`;
+          const pdfFiles = files.filter(file => /\.pdf$/i.test(file.name));
 
-                    if (pdfFiles.length === 0) {
-                        contentDiv.innerHTML += '<p>No se encontraron archivos PDF.</p>';
-                    } else {
-                        pdfFiles.forEach(file => {
-                            const link = document.createElement('a');
-                            link.href = file.download_url || file.html_url;
-                            link.textContent = file.name;
-                            link.className = 'file-link';
-                            link.target = '_blank';
+          if (pdfFiles.length === 0) {
+            contentDiv.innerHTML += '<p>No se encontraron archivos PDF.</p>';
+          } else {
+            pdfFiles.forEach(file => {
+              const link = document.createElement('a');
+              link.href = file.download_url || file.html_url;
+              link.textContent = file.name;
+              link.className = 'file-link';
+              link.target = '_blank';
 
-                            const icon = document.createElement('img');
-                            icon.src = iconUrl;
-                            icon.alt = "PDF";
+              const icon = document.createElement('img');
+              icon.src = iconUrl;
+              icon.alt = "PDF";
 
-                            link.prepend(icon);
-                            contentDiv.appendChild(link);
-                        });
-                    }
+              link.prepend(icon);
+              contentDiv.appendChild(link);
+            });
+          }
 
-                    const backBtn = document.createElement('button');
-                    backBtn.className = 'back-button';
-                    backBtn.textContent = '🔙 Volver';
-                    backBtn.onclick = showFolders;
-                    contentDiv.appendChild(backBtn);
-                })
-                .catch(error => {
-                    console.error('Error al cargar la carpeta:', error);
-                    contentDiv.innerHTML = `<p class="error">⚠️ Ocurrió un error al cargar los archivos. Intenta nuevamente más tarde.</p>`;
-                });
-        }
+          const backBtn = document.createElement('button');
+          backBtn.className = 'back-button';
+          backBtn.textContent = '🔙 Volver';
+          backBtn.onclick = showFolders;
+          contentDiv.appendChild(backBtn);
+        })
+        .catch(error => {
+          console.error('Error cargando archivos:', error);
+          contentDiv.innerHTML = `<p class="error">⚠️ Ocurrió un error al cargar los archivos. Intenta nuevamente más tarde.</p>`;
+        });
+    }
 
-        // Mostrar carpetas al cargar
-        showFolders();
-    </script>
+    // Carga inicial
+    showFolders();
+  </script>
 </body>
 </html>
 
