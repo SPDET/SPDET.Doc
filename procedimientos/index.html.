@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -89,14 +90,26 @@
   <div class="container">
     <h1>📄 Procedimientos Operacionales</h1>
     <h2>Superintendencia de Proyectos DET</h2>
+
     <div class="file-list">
-      <!-- Agrega tus archivos PDF aquí -->
+      <!-- Puedes agregar más archivos como estos -->
       <div class="file-item">
         <a href="GMIN-SPDET-P-001 Procedimiento General de Emergencia.pdf" target="_blank">
           GMIN-SPDET-P-001 - Procedimiento General de Emergencia
         </a>
       </div>
+      <div class="file-item">
+        <a href="GMIN-SPDET-P-002 Procedimiento Control Equipos.pdf" target="_blank">
+          GMIN-SPDET-P-002 - Procedimiento Control de Equipos
+        </a>
+      </div>
+      <div class="file-item">
+        <a href="GMIN-SPDET-P-003 Procedimiento Manejo de Materiales.pdf" target="_blank">
+          GMIN-SPDET-P-003 - Manejo de Materiales
+        </a>
+      </div>
     </div>
+
     <a class="back-link" href="../index.html">← Volver al menú principal</a>
   </div>
 </body>
