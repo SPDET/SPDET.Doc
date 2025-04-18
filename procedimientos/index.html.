@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Procedimientos SPDET</title>
+  <title>Reglamentos SPDET</title>
   <style>
     body {
       margin: 0;
@@ -88,24 +88,19 @@
 </head>
 <body>
   <div class="container">
-    <h1>📄 Procedimientos Operacionales</h1>
+    <h1>📄 Reglamentos Generales</h1>
     <h2>Superintendencia de Proyectos DET</h2>
 
     <div class="file-list">
-      <!-- Puedes agregar más archivos como estos -->
+      <!-- Reemplaza o agrega más archivos PDF aquí -->
       <div class="file-item">
-        <a href="GMIN-SPDET-P-001 Procedimiento General de Emergencia.pdf" target="_blank">
-          GMIN-SPDET-P-001 - Procedimiento General de Emergencia
+        <a href="GMIN-SPDET-R-001 Reglamento Uso de Dispositivos.pdf" target="_blank">
+          GMIN-SPDET-R-001 - Reglamento Uso de Dispositivos
         </a>
       </div>
       <div class="file-item">
-        <a href="GMIN-SPDET-P-002 Procedimiento Control Equipos.pdf" target="_blank">
-          GMIN-SPDET-P-002 - Procedimiento Control de Equipos
-        </a>
-      </div>
-      <div class="file-item">
-        <a href="GMIN-SPDET-P-003 Procedimiento Manejo de Materiales.pdf" target="_blank">
-          GMIN-SPDET-P-003 - Manejo de Materiales
+        <a href="GMIN-SPDET-R-002 Reglamento Seguridad Personal.pdf" target="_blank">
+          GMIN-SPDET-R-002 - Reglamento de Seguridad Personal
         </a>
       </div>
     </div>
