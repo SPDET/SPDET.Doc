@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +11,7 @@
       padding: 0;
       font-family: Arial, sans-serif;
       min-height: 100vh;
-      background-image: url('../el teniente.jpg'); /* Ruta relativa al fondo */
+      background-image: url('../el teniente.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -57,31 +58,37 @@
     }
 
     .file-item a {
-      color: #00ccff;
+      color: white; /* ← CAMBIO 2: Ahora el texto de los documentos es blanco */
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
     }
 
     .file-item a:hover {
+      color: #FFA500;
       text-decoration: underline;
     }
 
     .back-link {
       display: inline-block;
       margin-top: 30px;
-      color: #ccc;
+      background-color: #555;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
       text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
     .back-link:hover {
-      color: white;
+      background-color: #777;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>📄 Instructivos Disponibles</h1>
+    <h1>📄 Instructivos Operacionales</h1> <!-- CAMBIO 1 -->
     <h2>Superintendencia de Proyectos DET</h2>
     <div class="file-list">
       <div class="file-item">
@@ -95,32 +102,6 @@
         </a>
       </div>
       <div class="file-item">
-        <a href="GMIN-SPDET-I-003 Instructivo Operacional Traslado de Equipos Pesados con Camioneta.pdf" target="_blank">
-          GMIN-SPDET-I-003 - Traslado de Equipos Pesados
-        </a>
-      </div>
-      <div class="file-item">
-        <a href="GMIN-SPDET-I-004 Instructivo Operación de camión cargador de ANFO.pdf" target="_blank">
-          GMIN-SPDET-I-004 - Cargador de ANFO
-        </a>
-      </div>
-      <div class="file-item">
-        <a href="GMIN-SPDET-I-005 Instructivo Extracción de Mineral esponjado con LHD.pdf" target="_blank">
-          GMIN-SPDET-I-005 - Extracción con LHD
-        </a>
-      </div>
-      <div class="file-item">
-        <a href="GMIN-SPDET-I-007 Instructivo Operacional para Jumbo de Reducción Secundaria.pdf" target="_blank">
-          GMIN-SPDET-I-007 - Jumbo Reducción Secundaria
-        </a>
-      </div>
-      <div class="file-item">
-        <a href="GMIN-SPDET-I-008 Instructivo operacional carguío polvorazos UCL y Zanja.pdf" target="_blank">
-          GMIN-SPDET-I-008 - Carguío Polvorazos
-        </a>
-      </div>
-    </div>
-    <a class="back-link" href="../index.html">← Volver al menú principal</a>
-  </div>
-</body>
-</html>
+        <a href="GMIN-SPDET-I-003 Instructivo Oper
+
+   
