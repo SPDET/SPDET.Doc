@@ -90,22 +90,36 @@
   <div class="container">
     <h1>📄 Reglamentos Generales</h1>
     <h2>Superintendencia de Proyectos DET</h2>
-
-    <div class="file-list">
-      <!-- Agrega aquí tus archivos reglamentarios -->
-      <div class="file-item">
-        <a href="GMIN-SPDET-R-001 Reglamento Uso de Dispositivos.pdf" target="_blank">
-          GMIN-SPDET-R-001 - Uso de Dispositivos
-        </a>
-      </div>
-      <div class="file-item">
-        <a href="GMIN-SPDET-R-002 Reglamento Seguridad Personal.pdf" target="_blank">
-          GMIN-SPDET-R-002 - Seguridad Personal
-        </a>
-      </div>
-    </div>
-
+    <div class="file-list" id="file-list"></div>
     <a class="back-link" href="../index.html">← Volver al menú principal</a>
   </div>
+
+  <script>
+    fetch("https://api.github.com/repos/SPDET/SPDET.Doc/contents/reglamentos")
+      .then(res => res.json())
+      .then(files => {
+        const container = document.getElementById("file-list");
+
+        files.forEach(file => {
+          if (file.name.endsWith(".pdf")) {
+            const div = document.createElement("div");
+            div.className = "file-item";
+
+            const link = document.createElement("a");
+            link.href = file.download_url;
+            link.target = "_blank";
+            link.textContent = file.name.replace(/\.pdf$/, "");
+
+            div.appendChild(link);
+            container.appendChild(div);
+          }
+        });
+      })
+      .catch(error => {
+        const container = document.getElementById("file-list");
+        container.innerHTML = "<p>Error al cargar archivos. Intenta nuevamente más tarde.</p>";
+        console.error("Error cargando archivos:", error);
+      });
+  </script>
 </body>
 </html>
