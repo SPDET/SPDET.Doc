@@ -2,73 +2,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentos SPDET</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            background-image: url('./el teniente.jpg'); /* Imagen en raíz */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instructivos SPDET</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      background-image: url('../el teniente.jpg'); /* Ruta relativa al fondo */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.75); /* Fondo oscuro semitransparente */
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            text-align: center;
-        }
+    .container {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 900px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
 
-        h1 {
-            color: #FFA500;
-            margin-bottom: 10px;
-        }
+    h1 {
+      text-align: center;
+      color: #FFA500;
+      margin-bottom: 10px;
+    }
 
-        h2 {
-            color: red;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+    h2 {
+      text-align: center;
+      color: red;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
 
-        .folder-link {
-            display: block;
-            margin: 15px 0;
-            padding: 15px;
-            background-color: #222;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
+    .file-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-        .folder-link:hover {
-            background-color: #444;
-            transform: scale(1.03);
-        }
-    </style>
+    .file-item {
+      background-color: #222;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .file-item a {
+      color: #00ccff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .file-item a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>📂 Reglamentos, Instructivos y Procedimientos</h1>
-        <h2>Superintendencia de Proyectos DET</h2>
-
-        <a class="folder-link" href="./instructivos/">📁 Instructivos</a>
-        <a class="folder-link" href="./procedimientos/">📁 Procedimientos</a>
-        <a class="folder-link" href="./reglamentos/">📁 Reglamentos</a>
+  <div class="container">
+    <h1>📄 Instructivos Disponibles</h1>
+    <h2>Superintendencia de Proyectos DET</h2>
+    <div class="file-list">
+      <div class="file-item">
+        <a href="GMIN-SPDET-I-001 Instructivo Operación con Minicargador, Proceso Extracción.pdf" target="_blank">
+          GMIN-SPDET-I-001 - Operación con Minicargador
+        </a>
+      </div>
+      <div class="file-item">
+        <a href="GMIN-SPDET-I-002 Instructivo Soplado y Medición de Tiros en Zanjas y UCL.pdf" target="_blank">
+          GMIN-SPDET-I-002 - Soplado y Medición de Tiros
+        </a>
+      </div>
+      <div class="file-item">
+        <a href="GMIN-SPDET-I-003 Instructivo Operacional Traslado de Equipos Pesados con Camioneta.pdf" target="_blank">
+          GMIN-SPDET-I-003 - Traslado de Equipos Pesados
+        </a>
+      </div>
+      <div class="file-item">
+        <a href="GMIN-SPDET-I-004 Instructivo Operación de camión cargador de ANFO.pdf" target="_blank">
+          GMIN-SPDET-I-004 - Cargador de ANFO
+        </a>
+      </div>
+      <div class="file-item">
+        <a href="GMIN-SPDET-I-005 Instructivo Extracción de Mineral esponjado con LHD.pdf" target="_blank">
+          GMIN-SPDET-I-005 - Extracción con LHD
+        </a>
+      </div>
+      <div class="file-item">
+        <a href="GMIN-SPDET-I-007 Instructivo Operacional para Jumbo de Reducción Secundaria.pdf" target="_blank">
+          GMIN-SPDET-I-007 - Jumbo Reducción Secundaria
+        </a>
+      </div>
+      <div class="file-item">
+        <a href="GMIN-SPDET-I-008 Instructivo operacional carguío polvorazos UCL y Zanja.pdf" target="_blank">
+          GMIN-SPDET-I-008 - Carguío Polvorazos
+        </a>
+      </div>
     </div>
+    <a class="back-link" href="../index.html">← Volver al menú principal</a>
+  </div>
 </body>
 </html>
